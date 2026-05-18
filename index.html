@@ -31,19 +31,54 @@ s0.parentNode.insertBefore(s1,s0);
 -->
 <!--End of Tawk.to Script-->
 
-<script src="//code.tidio.co/vponmhqchbktfyakboi0cnv3wczwo2kq.js" async></script>
+<script src="//code.tidio.co/vponmhqchbktfyakboi0cnv3wczwo2kq.js" async>
+
+ (function() {
+    // Live Chat ট্রিগার এলিমেন্টটি নির্বাচন করুন
+    const trigger = document.getElementById('tidio-chat-trigger');
+    if (!trigger) return;
+
+    // ফাংশন: Tidio চ্যাট ওপেন করবে
+    function openTidioChat() {
+      if (window.tidioChatApi) {
+        // API রেডি থাকলে সরাসরি চ্যাট ওপেন করুন
+        window.tidioChatApi.open();
+        window.tidioChatApi.show();
+      } else {
+        // API এখনো লোড হয়নি – একটু অপেক্ষা করে আবার চেষ্টা করুন
+        const waitForApi = setInterval(function() {
+          if (window.tidioChatApi) {
+            clearInterval(waitForApi);
+            window.tidioChatApi.open();
+            window.tidioChatApi.show();
+          }
+        }, 200);
+        // নিরাপত্তার জন্য ৫ সেকেন্ড পর ইন্টারভাল বন্ধ করুন
+        setTimeout(() => clearInterval(waitForApi), 5000);
+      }
+    }
+
+    // ক্লিক ইভেন্ট যুক্ত করুন
+    trigger.addEventListener('click', openTidioChat);
+  })();
+
+</script>
 
   <!-- NAVBAR (top bar + manu) -->
   <div class="top-bar">
     <div class="container top-content">
       <div class="top-left">
-        <span><i class="fa-regular fa-comment"></i> 24x7 live Support</span>
-        <span>
-          <i class="fa-solid fa-phone"></i>
-          <a href="https://wa.me/8801712849777" style="color: inherit; text-decoration: none;">+880 1712849777</a>
-        </span>
-        <span><i class="fa-solid fa-comment-dots"></i> Live Chat</span>
-      </div>
+  <span><i class="fa-regular fa-comment"></i> 24x7 live Support</span>
+  <span>
+    <i class="fa-solid fa-phone"></i>
+    <a href="https://wa.me/8801712849777" style="color: inherit; text-decoration: none;">+880 1712849777</a>
+  </span>
+  <span id="tidio-chat-trigger">
+    <span onclick="if(window.tidioChatApi){tidioChatApi.open();tidioChatApi.show();}else{alert('Chat loading, please wait...');}">
+  <i class="fa-solid fa-comment-dots"></i> Live Chat
+</span>
+  </span>
+</div>
       <div class="top-right">
         <span class="follow">Follow Us</span>
         <div class="social-icons">
