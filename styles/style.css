@@ -1272,11 +1272,9 @@ footer p {
   display: block;
 }
     
-    /* No hide section */
-    #home, #about, #our-services, #management, #gallery, #contact, #company-overview {
-      scroll-margin-top: 120px;
+  
       
-    }
+    
 
     #tidio-chat-trigger {
     cursor: pointer;
