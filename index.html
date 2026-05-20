@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>First Solutions Limited</title>
   
-  <!-- Favicon (গুগলের জন্য সঠিক ফরম্যাট) -->
+  <!-- Favicon ( for Google Seo ) -->
   <link rel="icon" type="image/png" href="https://firstsolutions.com.bd/image/logo/favicon.png">
   <link rel="shortcut icon" href="https://firstsolutions.com.bd/image/logo/favicon.ico">
   
@@ -48,18 +48,18 @@ s0.parentNode.insertBefore(s1,s0);
 <script src="//code.tidio.co/vponmhqchbktfyakboi0cnv3wczwo2kq.js" async>
 
  (function() {
-    // Live Chat ট্রিগার এলিমেন্টটি নির্বাচন করুন
+    // Live Chat 
     const trigger = document.getElementById('tidio-chat-trigger');
     if (!trigger) return;
 
-    // ফাংশন: Tidio চ্যাট ওপেন করবে
+    // open live chat
     function openTidioChat() {
       if (window.tidioChatApi) {
-        // API রেডি থাকলে সরাসরি চ্যাট ওপেন করুন
+        // API 
         window.tidioChatApi.open();
         window.tidioChatApi.show();
       } else {
-        // API এখনো লোড হয়নি – একটু অপেক্ষা করে আবার চেষ্টা করুন
+        // API Waiting system
         const waitForApi = setInterval(function() {
           if (window.tidioChatApi) {
             clearInterval(waitForApi);
@@ -67,12 +67,12 @@ s0.parentNode.insertBefore(s1,s0);
             window.tidioChatApi.show();
           }
         }, 200);
-        // নিরাপত্তার জন্য ৫ সেকেন্ড পর ইন্টারভাল বন্ধ করুন
+        // 5 second off window
         setTimeout(() => clearInterval(waitForApi), 5000);
       }
     }
 
-    // ক্লিক ইভেন্ট যুক্ত করুন
+    // event
     trigger.addEventListener('click', openTidioChat);
   })();
 
@@ -369,7 +369,7 @@ s0.parentNode.insertBefore(s1,s0);
       
     </div>
   </section>
-  
+
     <div class="container partner">
     <div class="section-title"><h2>Our Partners</h2></div>
     <div class="slider-wrapper">

@@ -1213,7 +1213,7 @@ footer p {
   .service-card:hover .card-details {
     max-height: 350px;
     opacity: 1;
-  }
+  } 
 }
  /* ===== extra) ===== */
     
@@ -1279,4 +1279,4 @@ footer p {
     #tidio-chat-trigger {
     cursor: pointer;
 }
-    /*--------------end-------*/
+    /*--------------end-----*/
